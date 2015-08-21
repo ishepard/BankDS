@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Login</title>
+        <h:outputStylesheet library="css" name="login.css" />
+    </h:head>
+    <h:body>
+        <ui:fragment rendered="#{!sessionScopedUser.islogged}">
+            <h:form id="login">
+                <h:messages id="errormessage"
+                        showDetail="false"/>
+                <h1>Log In</h1>
+                <div id="inputs">
+                    <h:inputText id="username" 
+                                 class="username" 
+                                 value="#{sessionScopedUser.username}" 
+                                 p:placeholder="Username" 
+                                 required="true" />        
+                    <h:inputSecret id="password" 
+                                   class="password" 
+                                   value="#{sessionScopedUser.password}" 
+                                   p:placeholder="Password" 
+                                   required="true" 
+                                   requiredMessage="Insert password" />
+                </div>
+                <div id="actions" >
+                    <h:commandButton id="submit" 
+                                     class="submit"
+                                     type="submit"
+                                     value="Log in"
+                                     action="#{sessionScopedUser.login()}"
+                                     style="margin-left: 95px; width: 200px;"/>
+                </div>
+            </h:form>
+        </ui:fragment>
+        <ui:fragment rendered="#{sessionScopedUser.islogged}">
+            <h:form id="alreadylogin">
+                <div id="inputs">
+                        You have already logged in! Go to <h:link outcome="home" value="Home" />
+                </div>
+            </h:form>
+        </ui:fragment>
+    </h:body>
+</html>
+

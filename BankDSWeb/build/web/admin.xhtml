@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <!-- Bootstrap Core CSS -->
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+        <!-- Custom CSS -->
+        <h:outputStylesheet library="css" name="business-casual.css" />
+
+        <!-- Fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"></link>
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"></link>
+        <title><ui:insert name="title" /></title>
+    </h:head>
+
+    <h:body>
+        <div class="brand">DS Bank</div>
+        <div class="address-bar">Via Orazio Benevoli 3 | Trento, IT 38122 | davide.spadini@unitn.it</div>
+        <div class="container">
+                <div class="row">
+                    <div class="box">
+                        <div class="col-lg-12">
+                            <div id="content" class="center_content">
+                                <br/>
+                                <h:messages id="errormessage" showDetail="false"/>
+                                <table >
+                                    <caption>List Of Users</caption>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>First Name</th>
+                                        <th>Second Name</th>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        <th>Checking Account</th>
+                                        <th>Credit Card</th>
+                                    </tr>
+                                    <ui:repeat value="#{jsfAdminBean.getAll()}" var="user">
+                                        <tr>
+                                        <h:form>
+                                            <td>#{user.id}</td>
+                                            <td>#{user.firstname}</td>
+                                            <td>#{user.secondname}</td>
+                                            <td>#{user.username}</td>
+                                            <td>#{user.password}</td>
+                                            <td>#{user.checkingaccount}</td>
+                                            <td>#{user.creditcard}</td>
+                                        </h:form>
+                                        </tr>
+                                    </ui:repeat>
+                                </table>
+
+                                <br/>
+                                <br/>
+                                <p>Create new User: </p>
+                                <h:form id="createNewUser">
+                                    <p id="adminForm">First name: </p>
+                                    <h:inputText id="firstname" size="20" value="#{jsfAdminBean.firstname}" required="true" requiredMessage="Insert first name"/>
+                                    <h:message for="firstname" style="color:red" /><br />
+                                    <p id="adminForm">Second name: </p>
+                                    <h:inputText id="secondname" size="20" value="#{jsfAdminBean.secondname}" required="true" requiredMessage="Insert second name" />
+                                    <h:message for="secondname" style="color:red" /><br />
+                                    <p id="adminForm">Username: </p>
+                                    <h:inputText id="username" size="20" value="#{jsfAdminBean.username}" required="true" requiredMessage="Insert username"/>
+                                    <h:message for="username" style="color:red" /><br />
+                                    <p id="adminForm">Password: </p>
+                                    <h:inputText id="password" size="20" value="#{jsfAdminBean.password}" required="true" requiredMessage="Insert password"/>
+                                    <h:message for="password" style="color:red" /><br />
+                                    <p id="adminForm">Checking account: </p>
+                                    <h:inputText id="checkingaccount" size="20" value="#{jsfAdminBean.checkingaccount}" required="true" requiredMessage="Insert the amount of money on the checking_account (>= 0)" /><br />
+                                    <p id="adminForm">Credit card: </p>
+                                    <h:inputText id="creditcard" size="20" value="#{jsfAdminBean.creditcard}" required="true" requiredMessage="Insert the amount of money in the credit card (>= 0)"/><br />
+                                    <h:commandButton id="add" value="Add" action="#{jsfAdminBean.create()}"/>
+                                </h:form>
+
+                                <p>Delete existing user: </p>
+                                <h:form id="removeUser">
+                                    <p id="adminForm">Insert ID: </p><h:inputText id="id" size="20" value="#{id}" /> <br />
+                                    <h:commandButton id="remove" value="Remove" action="#{jsfAdminBean.delete(id)}"/>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>
+
+
