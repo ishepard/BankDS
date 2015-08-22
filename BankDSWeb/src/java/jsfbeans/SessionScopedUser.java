@@ -116,7 +116,7 @@ public class SessionScopedUser {
      */
     public SessionScopedUser() {
         rc = new RemoteConnector("BankDS", "BankDS-ejb");
-        System.out.println("Obtained Remote accessor: " + rc);
+        System.out.println("Obtained Remote accessor: " + rc.toString());
         try {
             admin = rc.lookup("AdminBean", AdminBeanRemote.class.getName());
             transfer = rc.lookup("BankTransfer", BankTransferRemote.class.getName());
@@ -131,6 +131,7 @@ public class SessionScopedUser {
         String pwd = admin.findUserByUsername(username);
         if (pwd != null){
             if (!pwd.equals(password)){
+                System.out.println("The password specified is not correct");
                 printMessage(FacesMessage.SEVERITY_ERROR, "Login Failed! The password specified is not correct.");
                 return null;
             }
@@ -146,6 +147,7 @@ public class SessionScopedUser {
             return "home";
         } else {
             // User does not exist
+            System.out.println("User " + username + " does not exist");
             printMessage(FacesMessage.SEVERITY_ERROR, "Login Failed! User does not exist.");
             return null;
         }
@@ -186,10 +188,15 @@ public class SessionScopedUser {
     }
     
     public String insertAmount(String amount){
-        if (checkCorrectnessAmount(amount) && (transaction.setAmount(Long.parseLong(amount), username))){
-            return "validation";
-        } else {
+        if (!checkCorrectnessAmount(amount)){
             return null;
+        } else {
+            if (transaction.setAmount(Long.parseLong(amount), username)){
+                return "validation";
+            } else {
+                printMessage(FacesMessage.SEVERITY_ERROR, "You don't have enough money. Insert a number < " + checkingaccount);
+                return null;
+            }
         }
     }
     

@@ -70,7 +70,6 @@ public class bankTransaction implements bankTransactionRemote {
     @Override
     public boolean setAmount(Long amount, String username){
         sender = (UserEntity) em.createNamedQuery("UserEntity.findByUsername").setParameter("username", username).getSingleResult();
-//        setSender(sender);
         if (amount > sender.getCheckingaccount()){
             System.out.println("You don't have enough money");
             return false;
