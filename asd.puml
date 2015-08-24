@@ -1,0 +1,23 @@
+@startuml
+annotation java.lang.Override
+annotation javax.persistence.Column
+annotation javax.persistence.Entity
+annotation javax.persistence.GeneratedValue
+annotation javax.persistence.Id
+annotation javax.persistence.NamedQueries
+annotation javax.persistence.NamedQuery
+annotation javax.persistence.Table
+class entities.UserEntity
+class javax.persistence.GenerationType
+interface java.io.Serializable
+entities.UserEntity ..> java.lang.Override
+entities.UserEntity ..> javax.persistence.Column
+entities.UserEntity ..> javax.persistence.Entity
+entities.UserEntity ..> javax.persistence.GeneratedValue
+entities.UserEntity ..> javax.persistence.Id
+entities.UserEntity ..> javax.persistence.NamedQueries
+entities.UserEntity ..> javax.persistence.NamedQuery
+entities.UserEntity ..> javax.persistence.Table
+entities.UserEntity ..> javax.persistence.GenerationType
+entities.UserEntity --|> java.io.Serializable
+@enduml

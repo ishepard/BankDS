@@ -6,9 +6,9 @@
 package jsfbeans;
 
 import connector.RemoteConnector;
-import ejbbeans.AdminBeanRemote;
-import ejbbeans.BankTransferRemote;
-import ejbbeans.bankTransactionRemote;
+import ejbbeansremote.AdminBeanRemote;
+import ejbbeansremote.BankTransferRemote;
+import ejbbeansremote.bankTransactionRemote;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -116,6 +116,7 @@ public class SessionScopedUser {
      */
     public SessionScopedUser() {
         rc = new RemoteConnector("BankDS", "BankDS-ejb");
+        System.out.println("Creating new SessionScoped bean");
         System.out.println("Obtained Remote accessor: " + rc.toString());
         try {
             admin = rc.lookup("AdminBean", AdminBeanRemote.class.getName());
@@ -127,7 +128,7 @@ public class SessionScopedUser {
     }
     
     public String login(){
-        System.out.println("User asked a login! Username are: " + username + ", password is: " + password);
+        System.out.println("User asked a login. Username is " + username + " and password is " + password);
         String pwd = admin.findUserByUsername(username);
         if (pwd != null){
             if (!pwd.equals(password)){
@@ -135,14 +136,7 @@ public class SessionScopedUser {
                 printMessage(FacesMessage.SEVERITY_ERROR, "Login Failed! The password specified is not correct.");
                 return null;
             }
-            List user = admin.getUserEntity(username);
-            id = Long.parseLong(user.get(0).toString());
-            firstname = (String) user.get(1);
-            secondname = (String) user.get(2);
-            username = (String) user.get(3);
-            password = (String) user.get(4);
-            checkingaccount = Long.parseLong(user.get(5).toString());
-            creditcard = Long.parseLong(user.get(6).toString());
+            completeUser();
             islogged = true;
             return "home";
         } else {
@@ -160,6 +154,23 @@ public class SessionScopedUser {
 //        if (session != null) {
 //            session.invalidate();
 //        }
+        deleteUser();
+        islogged = false;
+        return "login?faces-redirect=true";
+    }
+    
+    public void completeUser(){
+        List user = admin.getUserEntity(username);
+        id = Long.parseLong(user.get(0).toString());
+        firstname = (String) user.get(1);
+        secondname = (String) user.get(2);
+        username = (String) user.get(3);
+        password = (String) user.get(4);
+        checkingaccount = Long.parseLong(user.get(5).toString());
+        creditcard = Long.parseLong(user.get(6).toString());
+    }
+    
+    public void deleteUser(){
         id = null;
         firstname = null;
         secondname = null;
@@ -167,8 +178,6 @@ public class SessionScopedUser {
         password = null;
         checkingaccount = null;
         creditcard = null;
-        islogged = false;
-        return "login?faces-redirect=true";
     }
     
     public String insertBeneficiary(String username){

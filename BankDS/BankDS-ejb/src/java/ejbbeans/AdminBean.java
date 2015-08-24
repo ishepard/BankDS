@@ -5,6 +5,7 @@
  */
 package ejbbeans;
 
+import ejbbeansremote.AdminBeanRemote;
 import entities.UserEntity;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,11 +25,6 @@ import javax.persistence.PersistenceContext;
 public class AdminBean implements AdminBeanRemote {
     @PersistenceContext(unitName = "BankDS-ejbPU")
     private EntityManager em;
-
-    @Override
-    public String printMessage() {
-        return "Hello World!";
-    }
     
     @Override
     public void createUser(Long id, String firstname, String secondname, String username, String password, Long checkingaccount, Long creditcard){

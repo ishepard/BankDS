@@ -5,6 +5,7 @@
  */
 package ejbbeans;
 
+import ejbbeansremote.BankTransferRemote;
 import entities.UserEntity;
 import exceptions.IncorrectBillDetailsException;
 import javax.ejb.Stateless;

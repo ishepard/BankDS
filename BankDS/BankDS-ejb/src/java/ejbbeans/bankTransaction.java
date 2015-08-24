@@ -5,6 +5,7 @@
  */
 package ejbbeans;
 
+import ejbbeansremote.bankTransactionRemote;
 import entities.UserEntity;
 import exceptions.IncorrectBillDetailsException;
 import exceptions.InvalidCustomerAccountException;

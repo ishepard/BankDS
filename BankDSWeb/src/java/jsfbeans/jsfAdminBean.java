@@ -6,8 +6,7 @@
 package jsfbeans;
 
 import connector.RemoteConnector;
-import ejbbeans.AdminBeanRemote;
-import java.util.ArrayList;
+import ejbbeansremote.AdminBeanRemote;
 import java.util.List;
 import java.util.Map;
 import javax.faces.application.FacesMessage;
@@ -129,10 +128,6 @@ public class jsfAdminBean {
         System.out.println("Deleting user with id " + id);
         a.deleteUser(Long.parseLong(id));
         return "";
-    }
-    
-    public String showMessage(){
-        return a.printMessage();
     }
     
 }

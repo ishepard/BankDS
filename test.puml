@@ -1,0 +1,90 @@
+@startuml
+abstract class entities.UserEntity_
+annotation java.lang.Override
+annotation javax.annotation.Generated
+annotation javax.annotation.Resource
+annotation javax.ejb.Stateful
+annotation javax.ejb.Stateless
+annotation javax.ejb.TransactionManagement
+annotation javax.persistence.Column
+annotation javax.persistence.Entity
+annotation javax.persistence.GeneratedValue
+annotation javax.persistence.Id
+annotation javax.persistence.NamedQueries
+annotation javax.persistence.NamedQuery
+annotation javax.persistence.PersistenceContext
+annotation javax.persistence.Table
+annotation javax.persistence.metamodel.StaticMetamodel
+class ejbbeans.AdminBean
+class ejbbeans.BankTransfer
+class ejbbeans.bankTransaction
+class entities.UserEntity
+class exceptions.IncorrectBillDetailsException
+class exceptions.InvalidCustomerAccountException
+class java.lang.Exception
+class java.util.ArrayList
+class java.util.HashMap
+class java.util.LinkedList
+class java.util.List
+class java.util.Map
+class javax.ejb.TransactionManagementType
+class javax.persistence.EntityManager
+class javax.persistence.GenerationType
+class javax.persistence.NoResultException
+class javax.persistence.metamodel.SingularAttribute
+class javax.transaction.UserTransaction
+interface ejbbeans.AdminBeanRemote
+interface ejbbeans.BankTransferRemote
+interface ejbbeans.bankTransactionRemote
+interface java.io.Serializable
+entities.UserEntity_ ..> javax.annotation.Generated
+entities.UserEntity_ ..> javax.persistence.metamodel.StaticMetamodel
+entities.UserEntity_ ..> javax.persistence.metamodel.SingularAttribute
+ejbbeans.AdminBean ..> java.lang.Override
+ejbbeans.AdminBean ..> javax.ejb.Stateless
+ejbbeans.AdminBean ..> javax.persistence.PersistenceContext
+ejbbeans.AdminBean ..> entities.UserEntity
+ejbbeans.AdminBean ..> java.util.ArrayList
+ejbbeans.AdminBean ..> java.util.HashMap
+ejbbeans.AdminBean ..> java.util.LinkedList
+ejbbeans.AdminBean ..> java.util.List
+ejbbeans.AdminBean ..> java.util.Map
+ejbbeans.AdminBean ..> javax.persistence.EntityManager
+ejbbeans.AdminBean ..> javax.persistence.NoResultException
+ejbbeans.AdminBean --|> ejbbeans.AdminBeanRemote
+ejbbeans.BankTransfer ..> java.lang.Override
+ejbbeans.BankTransfer ..> javax.ejb.Stateless
+ejbbeans.BankTransfer ..> javax.persistence.PersistenceContext
+ejbbeans.BankTransfer ..> entities.UserEntity
+ejbbeans.BankTransfer ..> exceptions.IncorrectBillDetailsException
+ejbbeans.BankTransfer ..> javax.persistence.EntityManager
+ejbbeans.BankTransfer ..> javax.persistence.NoResultException
+ejbbeans.BankTransfer --|> ejbbeans.BankTransferRemote
+ejbbeans.bankTransaction ..> java.lang.Override
+ejbbeans.bankTransaction ..> javax.annotation.Resource
+ejbbeans.bankTransaction ..> javax.ejb.Stateful
+ejbbeans.bankTransaction ..> javax.ejb.TransactionManagement
+ejbbeans.bankTransaction ..> javax.persistence.PersistenceContext
+ejbbeans.bankTransaction ..> entities.UserEntity
+ejbbeans.bankTransaction ..> exceptions.IncorrectBillDetailsException
+ejbbeans.bankTransaction ..> exceptions.InvalidCustomerAccountException
+ejbbeans.bankTransaction ..> java.util.LinkedList
+ejbbeans.bankTransaction ..> java.util.List
+ejbbeans.bankTransaction ..> javax.ejb.TransactionManagementType
+ejbbeans.bankTransaction ..> javax.persistence.EntityManager
+ejbbeans.bankTransaction ..> javax.persistence.NoResultException
+ejbbeans.bankTransaction ..> javax.transaction.UserTransaction
+ejbbeans.bankTransaction --|> ejbbeans.bankTransactionRemote
+entities.UserEntity ..> java.lang.Override
+entities.UserEntity ..> javax.persistence.Column
+entities.UserEntity ..> javax.persistence.Entity
+entities.UserEntity ..> javax.persistence.GeneratedValue
+entities.UserEntity ..> javax.persistence.Id
+entities.UserEntity ..> javax.persistence.NamedQueries
+entities.UserEntity ..> javax.persistence.NamedQuery
+entities.UserEntity ..> javax.persistence.Table
+entities.UserEntity ..> javax.persistence.GenerationType
+entities.UserEntity --|> java.io.Serializable
+exceptions.IncorrectBillDetailsException --|> java.lang.Exception
+exceptions.InvalidCustomerAccountException --|> java.lang.Exception
+@enduml
