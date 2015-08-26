@@ -5,7 +5,6 @@
         <group/>
         <group name="BankDS">
             <file>file:/Users/shepard/Desktop/BankDS/BankDS/BankDS-ejb/src/java/ejbbeans/BankTransaction.java</file>
-            <file>file:/Users/shepard/Desktop/BankDS/BankDS/BankDS-ejb/src/conf/persistence.xml</file>
         </group>
     </open-files>
 </project-private>

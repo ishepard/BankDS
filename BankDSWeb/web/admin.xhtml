@@ -58,20 +58,16 @@
                                 <p>Create new User: </p>
                                 <h:form id="createNewUser">
                                     <p id="adminForm">First name: </p>
-                                    <h:inputText id="firstname" size="20" value="#{jsfAdminBean.firstname}" required="true" requiredMessage="Insert first name"/>
-                                    <h:message for="firstname" style="color:red" /><br />
+                                    <h:inputText id="firstname" size="20" value="#{jsfAdminBean.firstname}" required="true" requiredMessage="Insert first name"/><br />
                                     <p id="adminForm">Second name: </p>
-                                    <h:inputText id="secondname" size="20" value="#{jsfAdminBean.secondname}" required="true" requiredMessage="Insert second name" />
-                                    <h:message for="secondname" style="color:red" /><br />
+                                    <h:inputText id="secondname" size="20" value="#{jsfAdminBean.secondname}" required="true" requiredMessage="Insert second name" /><br />
                                     <p id="adminForm">Username: </p>
-                                    <h:inputText id="username" size="20" value="#{jsfAdminBean.username}" required="true" requiredMessage="Insert username"/>
-                                    <h:message for="username" style="color:red" /><br />
+                                    <h:inputText id="username" size="20" value="#{jsfAdminBean.username}" required="true" requiredMessage="Insert username"/><br />
                                     <p id="adminForm">Password: </p>
-                                    <h:inputText id="password" size="20" value="#{jsfAdminBean.password}" required="true" requiredMessage="Insert password"/>
-                                    <h:message for="password" style="color:red" /><br />
-                                    <p id="adminForm">Checking account: </p>
+                                    <h:inputSecret id="password" size="20" value="#{jsfAdminBean.password}" required="true" requiredMessage="Insert password"/><br />
+                                    <p id="adminForm">Checking account amount: </p>
                                     <h:inputText id="checkingaccount" size="20" value="#{jsfAdminBean.checkingaccount}" required="true" requiredMessage="Insert the amount of money on the checking_account (>= 0)" /><br />
-                                    <p id="adminForm">Credit card: </p>
+                                    <p id="adminForm">Credit card amount: </p>
                                     <h:inputText id="creditcard" size="20" value="#{jsfAdminBean.creditcard}" required="true" requiredMessage="Insert the amount of money in the credit card (>= 0)"/><br />
                                     <h:commandButton id="add" value="Add" action="#{jsfAdminBean.create()}"/>
                                 </h:form>

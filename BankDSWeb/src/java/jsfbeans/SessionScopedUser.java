@@ -15,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.naming.NamingException;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -203,7 +204,10 @@ public class SessionScopedUser {
             if (transaction.setAmount(Long.parseLong(amount), username)){
                 return "validation";
             } else {
-                printMessage(FacesMessage.SEVERITY_ERROR, "You don't have enough money. Insert a number < " + checkingaccount);
+                String err = "You don't have enough money. ";
+                if (checkingaccount > 1)
+                    err += "Insert a number <= " + checkingaccount;
+                printMessage(FacesMessage.SEVERITY_ERROR, err);
                 return null;
             }
         }

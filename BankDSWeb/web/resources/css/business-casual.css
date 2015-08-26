@@ -6,7 +6,7 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url(https://dl.dropboxusercontent.com/u/159328383/background.jpg) no-repeat center center fixed; 
+    background: url(#{resource['images:background.jpg']}) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -351,7 +351,7 @@ table tr:nth-child(even)  {background-color:#f1f1f1;}
 
 #createNewUser, #removeUser
 {
-    width: 310px;
+    width: 400px;
 }
 
 #adminForm

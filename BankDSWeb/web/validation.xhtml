@@ -23,7 +23,7 @@
                 <p id="inputsrecipients"> 
                     Confirm the transaction filling the form with your username and password, then click confirm: <br />
                     Username: <h:inputText id="recipientusernameval" value="#{username}" /> <br/>
-                    Password: <h:inputText id="recipientpassword" value="#{password}" /> <br/>
+                    Password: <h:inputSecret id="recipientpassword" value="#{password}" /> <br/>
                 </p>
                 <h:form id="actions">
                     <h:commandButton id="confirm" value="Confirm" action="#{sessionScopedUser.confirmTransaction(username, password)}" />

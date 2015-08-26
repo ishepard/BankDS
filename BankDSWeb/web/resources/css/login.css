@@ -8,7 +8,7 @@ body
 {
     font: 12px 'Lucida Sans Unicode', 'Trebuchet MS', Arial, Helvetica;    
     margin: 0;
-    background: url(https://dl.dropboxusercontent.com/u/159328383/background.jpg) no-repeat center center fixed; 
+    background: url(#{resource['images:background.jpg']}) no-repeat center center fixed; 
 }
 
 /*--------------------*/
