@@ -8,7 +8,7 @@ package jsfbeans;
 import connector.RemoteConnector;
 import ejbbeansremote.AdminBeanRemote;
 import ejbbeansremote.BankTransferRemote;
-import ejbbeansremote.bankTransactionRemote;
+import ejbbeansremote.BankTransactionRemote;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -26,7 +26,7 @@ public class SessionScopedUser {
     RemoteConnector rc;
     AdminBeanRemote admin;
     BankTransferRemote transfer;
-    bankTransactionRemote transaction;
+    BankTransactionRemote transaction;
     
     private boolean islogged = false;
     private String startingaccount;
@@ -121,7 +121,7 @@ public class SessionScopedUser {
         try {
             admin = rc.lookup("AdminBean", AdminBeanRemote.class.getName());
             transfer = rc.lookup("BankTransfer", BankTransferRemote.class.getName());
-            transaction = rc.lookup("bankTransaction", bankTransactionRemote.class.getName());
+            transaction = rc.lookup("BankTransaction", BankTransactionRemote.class.getName());
         } catch (NamingException ex) {
             System.out.println(ex.getMessage());
         }

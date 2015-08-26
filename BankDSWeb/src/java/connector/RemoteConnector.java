@@ -21,10 +21,6 @@ public class RemoteConnector {
         {
             put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
             put(Context.PROVIDER_URL, "http-remoting://localhost:8080");
-            // username
-            // put(Context.SECURITY_PRINCIPAL, "user");
-            // password
-            //put(Context.SECURITY_CREDENTIALS, "pw");
             // This is an important property to set if you want to do EJB invocations via the remote-naming project
             put("jboss.naming.client.ejb.context", "true");
         }

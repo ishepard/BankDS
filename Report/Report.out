@@ -1,6 +1,18 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Use Case and Class Diagram}{}% 2
-\BOOKMARK [1][-]{section.3}{Usage}{}% 3
-\BOOKMARK [1][-]{section.4}{Program architecture}{}% 4
-\BOOKMARK [1][-]{section.5}{Program evaluation}{}% 5
-\BOOKMARK [1][-]{section.6}{Conclusions and further works}{}% 6
+\BOOKMARK [1][-]{section.2}{Settings and Usage}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Setting up Tomcat}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Setting up Wildfly}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Start the project}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Use Case}{}% 6
+\BOOKMARK [1][-]{section.4}{Design}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Web Tier}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Business Logical Tier}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Persistent Tier}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Implementation Details}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{EJB Beans}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{JSF Beans}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.3}{RemoteConnector}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.4}{Transaction}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.5}{Log In}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.6}{CSS Template}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Comments and Notes}{}% 18

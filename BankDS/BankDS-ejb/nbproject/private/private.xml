@@ -4,7 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group/>
         <group name="BankDS">
-            <file>file:/Users/shepard/Desktop/BankDS/BankDS/BankDS-ejb/src/java/entities/UserEntity.java</file>
+            <file>file:/Users/shepard/Desktop/BankDS/BankDS/BankDS-ejb/src/java/ejbbeans/BankTransaction.java</file>
+            <file>file:/Users/shepard/Desktop/BankDS/BankDS/BankDS-ejb/src/conf/persistence.xml</file>
         </group>
     </open-files>
 </project-private>
